@@ -8,7 +8,7 @@ export default function MeetupList(props: any) {
   return (
     <ul className={classes.list}>
       {props.meetups.map((meetup: Btp) => (
-        <li className={classes.item}>
+        <li className={classes.item} key={meetup.id}>
           <div className={classes.card}>
             { meetup.fphoto && <div className={classes.image}><Image src={meetup.fphoto} width={100} height={100} alt={meetup.nom} /></div>}
             <div className={classes.content}>
