@@ -1,0 +1,490 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                Int             @id @default(autoincrement())
+  email             String          @unique
+  password          String
+  name              String?
+  role              Role            @default(USER)
+  posts             Post[]
+  profile           Profile?
+  activiteAut       Activite[]      @relation("auteur")
+  activiteEdit      Activite[]      @relation("editeur")
+  apprentiAut       Apprenti[]      @relation("auteur")
+  apprentiEdit      Apprenti[]      @relation("editeur")
+  apprentissageiAut Apprentissage[] @relation("auteur")
+  apprentissageEdit Apprentissage[] @relation("editeur")
+  artisanAut        Artisan[]       @relation("auteur")
+  artisanEdit       Artisan[]       @relation("editeur")
+  btpAut            Btp[]           @relation("auteur")
+  btpEdit           Btp[]           @relation("editeur")
+  documentAut       Document[]      @relation("auteur")
+  documentEdit      Document[]      @relation("editeur")
+  etablissementAut  Etablissement[] @relation("auteur")
+  etablissementEdit Etablissement[] @relation("editeur")
+  filiereAut        Filiere[]       @relation("auteur")
+  filiereEdit       Filiere[]       @relation("editeur")
+  personnelAut      Personnel[]     @relation("auteur")
+  personnelEdit     Personnel[]     @relation("editeur")
+  projetAut         Projet[]        @relation("auteur")
+  projetEdit        Projet[]        @relation("editeur")
+  secteurAut        Secteur[]       @relation("auteur")
+  secteurEdit       Secteur[]       @relation("editeur")
+  utexiAut          Utexi[]         @relation("auteur")
+  utexiEdit         Utexi[]         @relation("editeur")
+}
+
+model Profile {
+  id       Int     @id @default(autoincrement())
+  bio      String?
+  auteur   User    @relation(fields: [auteurId], references: [id])
+  auteurId Int     @unique
+}
+
+model Post {
+  id         Int        @id @default(autoincrement())
+  createdAt  DateTime   @default(now())
+  title      String?    @db.VarChar(225)
+  published  Boolean    @default(false)
+  auteur     User       @relation(fields: [auteurId], references: [id])
+  auteurId   Int
+  categories Category[]
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Activite {
+  id          Int       @id @default(autoincrement())
+  type        String?   @db.VarChar(45)
+  titre       String?
+  description String?   @db.LongText
+  lieu        String?
+  date        DateTime? @db.DateTime(0)
+  video       String?
+  code        String?
+  couverture  String?
+  creation    DateTime? @db.Date
+  maj         DateTime? @db.DateTime(0)
+  auteurId    Int?
+  editeurId   Int?
+  auteur      User?     @relation("auteur", fields: [auteurId], references: [id])
+  editeur     User?     @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Apprenti {
+  id              Int            @id @default(autoincrement())
+  numextrait      String
+  contact         String         @db.VarChar(22)
+  contact1        String         @db.VarChar(22)
+  contact2        String?        @db.VarChar(22)
+  nom             String
+  prenoms         String
+  nomjeunefille   String?        @db.VarChar(100)
+  numero          String
+  datenaissance   DateTime       @db.Date
+  lieunaissance   String?
+  sexe            String         @db.VarChar(10)
+  situationmat    String         @db.VarChar(15)
+  piece           String
+  numpiece        String?
+  entreprise      String?
+  maitre          String?
+  contratmaitre   String?
+  aej             String?        @db.VarChar(45)
+  tresorpay       String?        @db.VarChar(22)
+  cartebus        Int?
+  assurance       Int?
+  pecule1         Int?
+  pecule2         Int?
+  pecule3         Int?
+  pecule4         Int?
+  pecule5         Int?
+  pecule6         Int?
+  pecule7         Int?
+  pecule8         Int?
+  pecule9         Int?
+  creation        DateTime?      @db.Date
+  maj             DateTime?      @db.DateTime(0)
+  etablissementId Int?
+  filiereId       Int?
+  filiere         Filiere?       @relation(fields: [filiereId], references: [id])
+  etablissement   Etablissement? @relation(fields: [etablissementId], references: [id])
+  auteurId        Int?
+  editeurId       Int?
+  auteur          User?          @relation("auteur", fields: [auteurId], references: [id])
+  editeur         User?          @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Apprentissage {
+  id                 Int            @id @default(autoincrement())
+  nom                String
+  prenoms            String
+  numero             String?
+  datenaissance      DateTime       @db.Date
+  lieunaissance      String?
+  sexe               String         @db.VarChar(10)
+  situationmat       String         @db.VarChar(15)
+  piece              String
+  numpiece           String?
+  numextrait         String
+  contact            String         @db.VarChar(22)
+  contact1           String?        @db.VarChar(22)
+  contact2           String?        @db.VarChar(22)
+  niveauetude        String         @db.VarChar(45)
+  situationpro       String?        @db.VarChar(45)
+  situationprosaisie String?        @db.VarChar(45)
+  experience         Int
+  fonction           String?
+  creation           DateTime?      @db.Date
+  maj                DateTime?      @db.DateTime(0)
+  diplome            String?
+  diplomedemande     String?
+  anneediplome       Int?
+  entreprise         String?
+  contactemployeur   String?        @db.VarChar(22)
+  nomjeunefille      String?
+  fphoto             String?
+  resultat           Int?
+  fpiece             String?
+  fextrait           String?
+  fniveau            String?
+  etustatut          Int?
+  etucom             String?
+  entdate            DateTime?      @db.DateTime(0)
+  entlieu            String?
+  entnote            Int?
+  entstatut          Int?
+  entcom             String?
+  visdate            DateTime?      @db.DateTime(0)
+  vislieu            String?
+  visstatut          Int?
+  viscom             String?
+  postelieu          String?        @db.VarChar(100)
+  postedate          DateTime?      @db.Date
+  entmoy             Float?         @db.Float
+  entnote2           Int?
+  etablissementId    Int?
+  filiereId          Int?
+  filiere            Filiere?       @relation(fields: [filiereId], references: [id])
+  etablissement      Etablissement? @relation(fields: [etablissementId], references: [id])
+  auteurId           Int?
+  editeurId          Int?
+  auteur             User?          @relation("auteur", fields: [auteurId], references: [id])
+  editeur            User?          @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Artisan {
+  id               Int            @id @default(autoincrement())
+  etablissement_id Int?
+  filiere_id       Int?
+  nom              String         @db.VarChar(100)
+  contact1         String         @db.VarChar(22)
+  contact2         String?        @db.VarChar(22)
+  email            String?
+  photo            String?        @db.VarChar(100)
+  creation         DateTime?      @default(now())
+  maj              DateTime?      @updatedAt
+  etablissementId  Int?
+  filiereId        Int?
+  filiere          Filiere?       @relation(fields: [filiereId], references: [id])
+  etablissement    Etablissement? @relation(fields: [etablissementId], references: [id])
+  auteurId         Int?
+  editeurId        Int?
+  auteur           User?          @relation("auteur", fields: [auteurId], references: [id])
+  editeur          User?          @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Btp {
+  id                 Int       @id @default(autoincrement())
+  nom                String
+  prenoms            String
+  nomjeunefille      String?
+  datenaissance      DateTime? @db.Date
+  lieunaissance      String?
+  sexe               String?   @db.VarChar(10)
+  situationmat       String?   @db.VarChar(15)
+  piece              String?
+  numpiece           String?
+  contact            String?   @db.VarChar(22)
+  typetuteur         String?   @db.VarChar(10)
+  nomtuteur          String?   @db.VarChar(45)
+  prenomstuteur      String?   @db.VarChar(45)
+  contacttuteur      String?   @db.VarChar(22)
+  niveauetude        String?   @db.VarChar(45)
+  metier             String?
+  numero             String?
+  fphoto             String?
+  fpiece             String?
+  fextrait           String?
+  fniveau            String?
+  etustatut          Int?
+  etucom             String?
+  entdate            DateTime? @db.DateTime(0)
+  entlieu            String?
+  entstatut          Int?
+  entcom             String?
+  visdate            DateTime? @db.DateTime(0)
+  vislieu            String?
+  visstatut          Int?
+  viscom             String?
+  postelieu          String?   @db.VarChar(100)
+  postedate          DateTime? @db.Date
+  resultat           Int?
+  situationpro       String?   @db.VarChar(45)
+  situationprosaisie String?   @db.VarChar(45)
+  experience         Int?      @default(0)
+  fonction           String?
+  diplome            String?
+  diplomedemande     String?
+  anneediplome       Int?
+  entreprise         String?
+  contactemployeur   String?   @db.VarChar(22)
+  entnote            Float?    @db.Float
+  entmoy             Float?    @db.Float
+  entnote2           Int?
+  creation           DateTime? @default(now())
+  maj                DateTime? @updatedAt
+  auteurId           Int?
+  editeurId          Int?
+  auteur             User?     @relation("auteur", fields: [auteurId], references: [id])
+  editeur            User?     @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Direction {
+  id            Int             @id @default(autoincrement())
+  type          String?         @db.VarChar(2)
+  nom           String
+  responsable   String?         @db.VarChar(100)
+  contact       String?         @db.VarChar(22)
+  etablissement Etablissement[]
+  creation      DateTime?       @default(now())
+  maj           DateTime?       @updatedAt
+}
+
+model Document {
+  id          Int       @id @default(autoincrement())
+  titre       String
+  description String?
+  fichier     String?
+  type        String?   @db.VarChar(5)
+  categorie   String?   @db.VarChar(5)
+  visibilite  String?   @db.VarChar(10)
+  creation    DateTime? @default(now())
+  maj         DateTime? @updatedAt
+  auteurId    Int?
+  editeurId   Int?
+  auteur      User?     @relation("auteur", fields: [auteurId], references: [id])
+  editeur     User?     @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Etablissement {
+  id                    Int                    @id @default(autoincrement())
+  nom                   String
+  direction_id          Int?
+  code                  String?
+  definition            String?
+  type_et               String?                @db.VarChar(20)
+  type_en               String?                @db.VarChar(20)
+  centre                Boolean?
+  contact               String?
+  email                 String?
+  actif                 Boolean?
+  apprenti              Apprenti[]
+  apprentissage         Apprentissage[]
+  artisan               Artisan[]
+  direction             Direction?             @relation(fields: [direction_id], references: [id])
+  etablissement_filiere EtablissementFiliere[]
+  creation              DateTime?              @default(now())
+  maj                   DateTime?              @updatedAt
+  auteurId              Int?
+  editeurId             Int?
+  auteur                User?                  @relation("auteur", fields: [auteurId], references: [id])
+  editeur               User?                  @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model EtablissementFiliere {
+  id               Int            @id @default(autoincrement())
+  etablissement_id Int?
+  filiere_id       Int?
+  nbrplace         Int?
+  app              Boolean?
+  fq               Boolean?
+  vae              Boolean?
+  filiere          Filiere?       @relation(fields: [filiere_id], references: [id])
+  etablissement    Etablissement? @relation(fields: [etablissement_id], references: [id])
+}
+
+model Filiere {
+  id                    Int                    @id @default(autoincrement())
+  nom                   String
+  secteur               String?
+  secteur_id            Int?
+  projet                String?                @db.VarChar(22)
+  objectif              Int?
+  niveau                String?                @db.VarChar(100)
+  mission               String?                @db.LongText
+  activite              String?                @db.LongText
+  profil                String?                @db.LongText
+  nbrcdi                Int?
+  nbrcdd                Int?
+  active                Boolean?
+  apprenti              Apprenti[]
+  apprentissage         Apprentissage[]
+  artisan               Artisan[]
+  etablissement_filiere EtablissementFiliere[]
+  creation              DateTime?              @default(now())
+  maj                   DateTime?              @updatedAt
+  auteurId              Int?
+  editeurId             Int?
+  auteur                User?                  @relation("auteur", fields: [auteurId], references: [id])
+  editeur               User?                  @relation("editeur", fields: [editeurId], references: [id])
+  Secteur               Secteur?               @relation(fields: [secteurId], references: [id])
+  secteurId             Int?
+  Utexi                 Utexi[]
+}
+
+model Personnel {
+  id        Int       @id @default(autoincrement())
+  matricule String?   @db.VarChar(20)
+  nom       String    @db.VarChar(100)
+  fonction  String?
+  niveau    Int?
+  emploie   String?
+  photo     String?
+  contact   String    @db.VarChar(22)
+  mailpro   String    @db.VarChar(100)
+  mailperso String    @db.VarChar(100)
+  creation  DateTime? @default(now())
+  maj       DateTime? @updatedAt
+  auteurId  Int?
+  editeurId Int?
+  auteur    User?     @relation("auteur", fields: [auteurId], references: [id])
+  editeur   User?     @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Projet {
+  id          Int       @id @default(autoincrement())
+  titre       String
+  description String?   @db.LongText
+  entreprise  String?   @db.VarChar(100)
+  tag         String?
+  url         String?
+  image       String?
+  icone       String?
+  icone2      String?   @db.VarChar(22)
+  communique  String?   @db.VarChar(45)
+  convention  String?
+  annonce     String?
+  calendrier  String?   @db.VarChar(45)
+  active      String?   @db.VarChar(15)
+  type        String?   @db.VarChar(22)
+  urlresultat String?
+  creation    DateTime? @default(now())
+  maj         DateTime? @updatedAt
+  auteurId    Int?
+  editeurId   Int?
+  auteur      User?     @relation("auteur", fields: [auteurId], references: [id])
+  editeur     User?     @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Secteur {
+  id        Int       @id @default(autoincrement())
+  nom       String
+  filiere   Filiere[]
+  creation  DateTime? @default(now())
+  maj       DateTime? @updatedAt
+  auteurId  Int?
+  editeurId Int?
+  auteur    User?     @relation("auteur", fields: [auteurId], references: [id])
+  editeur   User?     @relation("editeur", fields: [editeurId], references: [id])
+}
+
+model Utexi {
+  id             Int       @id @default(autoincrement())
+  nom            String
+  prenoms        String
+  numero         String?
+  datenaissance  DateTime  @db.Date
+  lieunaissance  String?
+  sexe           String    @db.VarChar(10)
+  situationmat   String    @db.VarChar(15)
+  piece          String
+  numpiece       String?
+  numextrait     String?
+  contact        String    @db.VarChar(22)
+  contact1       String?   @db.VarChar(22)
+  contact2       String?   @db.VarChar(22)
+  contrat        String?   @db.VarChar(3)
+  residence      String?   @db.VarChar(100)
+  niveausco      String?   @db.VarChar(20)
+  anniveausco    Int?
+  diplomesco     String?   @db.VarChar(100)
+  andiplomesco   Int?
+  niveausup      String?   @db.VarChar(20)
+  anniveausup    Int?
+  diplomesup     String?   @db.VarChar(100)
+  andiplomesup   Int?
+  diplomepro     String?   @db.VarChar(100)
+  datediplomepro DateTime? @db.Date
+  spediplomepro  String?   @db.VarChar(100)
+  etbdiplomepro  String?   @db.VarChar(100)
+  stage          Boolean?
+  entstage       String?   @db.VarChar(100)
+  debutstage     DateTime? @db.Date
+  finstage       DateTime? @db.Date
+  lieustage      String?   @db.VarChar(100)
+  emploi         Boolean?
+  contratemploi  String?   @db.VarChar(11)
+  entemploi      String?   @db.VarChar(100)
+  debutemploi    DateTime? @db.Date
+  finemploi      DateTime? @db.Date
+  lieuemploi     String?   @db.VarChar(100)
+  arretemploi    String?   @db.VarChar(100)
+  disponibilite  Boolean?
+  niveaumetier   String?   @db.VarChar(100)
+  nomjeunefille  String?
+  fphoto         String?
+  resultat       Int?
+  fpiece         String?
+  fextrait       String?
+  fniveau        String?
+  etustatut      Int?
+  etucom         String?
+  entdate        DateTime? @db.DateTime(0)
+  entlieu        String?
+  entnote        Int?
+  entstatut      Int?
+  entcom         String?
+  visdate        DateTime? @db.DateTime(0)
+  vislieu        String?
+  visstatut      Int?
+  viscom         String?
+  postelieu      String?   @db.VarChar(100)
+  postedate      DateTime? @db.Date
+  entmoy         Float?    @db.Float
+  entnote2       Int?
+  creation       DateTime? @default(now())
+  maj            DateTime? @updatedAt
+  filiereId      Int?
+  filiere        Filiere?  @relation(fields: [filiereId], references: [id])
+  auteurId       Int?
+  editeurId      Int?
+  auteur         User?     @relation("auteur", fields: [auteurId], references: [id])
+  editeur        User?     @relation("editeur", fields: [editeurId], references: [id])
+}
