@@ -1,10 +1,11 @@
-import * as Icon from 'react-feather';
+import * as Icon from 'react-feather'
+import Link from 'next/link'
 
 export default function Sidebar() {
   return (
     <nav className="sidebar">
       <div className="sidebar-header">
-        <a href="#" className="sidebar-brand">Noble<span>UI</span></a>
+        <Link href="#" className="sidebar-brand">Noble<span>UI</span></Link>
         <div className='sidebar-toggler not-active'>
           <span></span>
           <span></span>
@@ -15,281 +16,281 @@ export default function Sidebar() {
         <ul className="nav">
           <li className="nav-item nav-category">Main</li>
           <li className="nav-item">
-            <a href="/" className="nav-link"><Icon.Box className="link-icon" /> <span className="link-title">Dashboard</span></a>
+            <Link href="/" className="nav-link"><Icon.Box className="link-icon" /> <span className="link-title">Dashboard</span></Link>
           </li>
           <li className="nav-item nav-category">web apps</li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
               <Icon.Mail className="link-icon" /><span className="link-title">Email</span><Icon.ChevronDown className="link-arrow" />
-            </a>
+            </Link>
             <div className="collapse" id="emails">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/email/inbox.html" className="nav-link">Inbox</a>
+                  <Link href="pages/email/inbox.html" className="nav-link">Inbox</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/email/read.html" className="nav-link">Read</a>
+                  <Link href="pages/email/read.html" className="nav-link">Read</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/email/compose.html" className="nav-link">Compose</a>
+                  <Link href="pages/email/compose.html" className="nav-link">Compose</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item">
-            <a href="pages/apps/chat.html" className="nav-link">
+            <Link href="pages/apps/chat.html" className="nav-link">
               <Icon.MessageSquare className="link-icon" /><span className="link-title">Chat</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="pages/apps/calendar.html" className="nav-link">
+            <Link href="pages/apps/calendar.html" className="nav-link">
               <Icon.Calendar className="link-icon" /><span className="link-title">Calendar</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item nav-category">Components</li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
               <Icon.Feather className="link-icon" /><span className="link-title">UI Kit</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="uiComponents">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="accordion.html" className="nav-link">Accordion</a>
+                  <Link href="accordion.html" className="nav-link">Accordion</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="alerts.html" className="nav-link">Alerts</a>
+                  <Link href="alerts.html" className="nav-link">Alerts</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="badges.html" className="nav-link">Badges</a>
+                  <Link href="badges.html" className="nav-link">Badges</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="breadcrumbs.html" className="nav-link">Breadcrumbs</a>
+                  <Link href="breadcrumbs.html" className="nav-link">Breadcrumbs</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="buttons.html" className="nav-link">Buttons</a>
+                  <Link href="buttons.html" className="nav-link">Buttons</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="button-group.html" className="nav-link">Button group</a>
+                  <Link href="button-group.html" className="nav-link">Button group</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="cards.html" className="nav-link">Cards</a>
+                  <Link href="cards.html" className="nav-link">Cards</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="carousel.html" className="nav-link">Carousel</a>
+                  <Link href="carousel.html" className="nav-link">Carousel</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="collapse.html" className="nav-link">Collapse</a>
+                  <Link href="collapse.html" className="nav-link">Collapse</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="dropdowns.html" className="nav-link">Dropdowns</a>
+                  <Link href="dropdowns.html" className="nav-link">Dropdowns</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="list-group.html" className="nav-link">List group</a>
+                  <Link href="list-group.html" className="nav-link">List group</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="media-object.html" className="nav-link">Media object</a>
+                  <Link href="media-object.html" className="nav-link">Media object</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="modal.html" className="nav-link">Modal</a>
+                  <Link href="modal.html" className="nav-link">Modal</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="navs.html" className="nav-link">Navs</a>
+                  <Link href="navs.html" className="nav-link">Navs</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="navbar.html" className="nav-link">Navbar</a>
+                  <Link href="navbar.html" className="nav-link">Navbar</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pagination.html" className="nav-link">Pagination</a>
+                  <Link href="pagination.html" className="nav-link">Pagination</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="popover.html" className="nav-link">Popovers</a>
+                  <Link href="popover.html" className="nav-link">Popovers</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="progress.html" className="nav-link">Progress</a>
+                  <Link href="progress.html" className="nav-link">Progress</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="scrollbar.html" className="nav-link">Scrollbar</a>
+                  <Link href="scrollbar.html" className="nav-link">Scrollbar</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="scrollspy.html" className="nav-link">Scrollspy</a>
+                  <Link href="scrollspy.html" className="nav-link">Scrollspy</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="spinners.html" className="nav-link">Spinners</a>
+                  <Link href="spinners.html" className="nav-link">Spinners</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="tabs.html" className="nav-link">Tabs</a>
+                  <Link href="tabs.html" className="nav-link">Tabs</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="tooltips.html" className="nav-link">Tooltips</a>
+                  <Link href="tooltips.html" className="nav-link">Tooltips</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#advancedUI" role="button" aria-expanded="false" aria-controls="advancedUI">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#advancedUI" role="button" aria-expanded="false" aria-controls="advancedUI">
               <Icon.Anchor className="link-icon" /><span className="link-title">Advanced UI</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="advancedUI">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/advanced-ui/cropper.html" className="nav-link">Cropper</a>
+                  <Link href="pages/advanced-ui/cropper.html" className="nav-link">Cropper</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/advanced-ui/owl-carousel.html" className="nav-link">Owl carousel</a>
+                  <Link href="pages/advanced-ui/owl-carousel.html" className="nav-link">Owl carousel</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/advanced-ui/sortablejs.html" className="nav-link">SortableJs</a>
+                  <Link href="pages/advanced-ui/sortablejs.html" className="nav-link">SortableJs</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/advanced-ui/sweet-alert.html" className="nav-link">Sweet Alert</a>
+                  <Link href="pages/advanced-ui/sweet-alert.html" className="nav-link">Sweet Alert</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#forms" role="button" aria-expanded="false" aria-controls="forms">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#forms" role="button" aria-expanded="false" aria-controls="forms">
               <Icon.Inbox className="link-icon" /><span className="link-title">Forms</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="forms">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/forms/basic-elements.html" className="nav-link">Basic Elements</a>
+                  <Link href="pages/forms/basic-elements.html" className="nav-link">Basic Elements</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/forms/advanced-elements.html" className="nav-link">Advanced Elements</a>
+                  <Link href="pages/forms/advanced-elements.html" className="nav-link">Advanced Elements</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/forms/editors.html" className="nav-link">Editors</a>
+                  <Link href="pages/forms/editors.html" className="nav-link">Editors</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/forms/wizard.html" className="nav-link">Wizard</a>
+                  <Link href="pages/forms/wizard.html" className="nav-link">Wizard</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#charts" role="button" aria-expanded="false" aria-controls="charts">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#charts" role="button" aria-expanded="false" aria-controls="charts">
               <Icon.PieChart className="link-icon" /><span className="link-title">Charts</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="charts">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/charts/apex.html" className="nav-link">Apex</a>
+                  <Link href="pages/charts/apex.html" className="nav-link">Apex</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/charts/chartjs.html" className="nav-link">ChartJs</a>
+                  <Link href="pages/charts/chartjs.html" className="nav-link">ChartJs</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/charts/flot.html" className="nav-link">Flot</a>
+                  <Link href="pages/charts/flot.html" className="nav-link">Flot</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/charts/peity.html" className="nav-link">Peity</a>
+                  <Link href="pages/charts/peity.html" className="nav-link">Peity</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/charts/sparkline.html" className="nav-link">Sparkline</a>
+                  <Link href="pages/charts/sparkline.html" className="nav-link">Sparkline</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#tables" role="button" aria-expanded="false" aria-controls="tables">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#tables" role="button" aria-expanded="false" aria-controls="tables">
               <Icon.Layout className="link-icon" /><span className="link-title">Table</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="tables">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/tables/basic-table.html" className="nav-link">Basic Tables</a>
+                  <Link href="pages/tables/basic-table.html" className="nav-link">Basic Tables</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/tables/data-table.html" className="nav-link">Data Table</a>
+                  <Link href="pages/tables/data-table.html" className="nav-link">Data Table</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#icons" role="button" aria-expanded="false" aria-controls="icons">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#icons" role="button" aria-expanded="false" aria-controls="icons">
               <Icon.Smile className="link-icon" /><span className="link-title">Icons</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="icons">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/icons/feather-icons.html" className="nav-link">Feather Icons</a>
+                  <Link href="pages/icons/feather-icons.html" className="nav-link">Feather Icons</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/icons/flag-icons.html" className="nav-link">Flag Icons</a>
+                  <Link href="pages/icons/flag-icons.html" className="nav-link">Flag Icons</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/icons/mdi-icons.html" className="nav-link">Mdi Icons</a>
+                  <Link href="pages/icons/mdi-icons.html" className="nav-link">Mdi Icons</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item nav-category">Pages</li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button" aria-expanded="false" aria-controls="general-pages">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button" aria-expanded="false" aria-controls="general-pages">
               <Icon.Book className="link-icon" /><span className="link-title">Special pages</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="general-pages">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/general/blank-page.html" className="nav-link">Blank page</a>
+                  <Link href="pages/general/blank-page.html" className="nav-link">Blank page</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/general/faq.html" className="nav-link">Faq</a>
+                  <Link href="pages/general/faq.html" className="nav-link">Faq</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/general/invoice.html" className="nav-link">Invoice</a>
+                  <Link href="pages/general/invoice.html" className="nav-link">Invoice</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/general/profile.html" className="nav-link">Profile</a>
+                  <Link href="pages/general/profile.html" className="nav-link">Profile</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/general/pricing.html" className="nav-link">Pricing</a>
+                  <Link href="pages/general/pricing.html" className="nav-link">Pricing</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/general/timeline.html" className="nav-link">Timeline</a>
+                  <Link href="pages/general/timeline.html" className="nav-link">Timeline</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false" aria-controls="authPages">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false" aria-controls="authPages">
               <Icon.Unlock className="link-icon" /><span className="link-title">Authentication</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="authPages">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/auth/login.html" className="nav-link">Login</a>
+                  <Link href="pages/auth/login.html" className="nav-link">Login</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/auth/register.html" className="nav-link">Register</a>
+                  <Link href="pages/auth/register.html" className="nav-link">Register</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="collapse" href="#errorPages" role="button" aria-expanded="false" aria-controls="errorPages">
+            <Link className="nav-link" data-bs-toggle="collapse" href="#errorPages" role="button" aria-expanded="false" aria-controls="errorPages">
               <Icon.CloudOff className="link-icon" /><span className="link-title">Error</span><Icon.ChevronDown className="link-icon" />
-            </a>
+            </Link>
             <div className="collapse" id="errorPages">
               <ul className="nav sub-menu">
                 <li className="nav-item">
-                  <a href="pages/error/404.html" className="nav-link">404</a>
+                  <Link href="pages/error/404.html" className="nav-link">404</Link>
                 </li>
                 <li className="nav-item">
-                  <a href="pages/error/500.html" className="nav-link">500</a>
+                  <Link href="pages/error/500.html" className="nav-link">500</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li className="nav-item nav-category">Docs</li>
           <li className="nav-item">
-            <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" className="nav-link">
+            <Link href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" className="nav-link">
               <Icon.Hash className="link-icon" /><span className="link-title">Documentation</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
     </nav>
-  );
+  )
 }

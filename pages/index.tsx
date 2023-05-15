@@ -1,4 +1,5 @@
-import BtpList from "@/components/btp/List";
+import BtpList from "@/components/btp/List"
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -12,15 +13,15 @@ export default function Home() {
                 <div className="d-flex justify-content-between align-items-baseline">
                   <h6 className="card-title mb-0">New Customers</h6>
                   <div className="dropdown mb-2">
-                    <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link href="#" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i className="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                    </a>
+                    </Link>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></a>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></Link>
                     </div>
                   </div>
                 </div>
@@ -47,15 +48,15 @@ export default function Home() {
                 <div className="d-flex justify-content-between align-items-baseline">
                   <h6 className="card-title mb-0">New Orders</h6>
                   <div className="dropdown mb-2">
-                    <a type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link href="#" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i className="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                    </a>
+                    </Link>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></a>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></Link>
                     </div>
                   </div>
                 </div>
@@ -82,15 +83,15 @@ export default function Home() {
                 <div className="d-flex justify-content-between align-items-baseline">
                   <h6 className="card-title mb-0">Growth</h6>
                   <div className="dropdown mb-2">
-                    <a type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link href="#" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i className="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                    </a>
+                    </Link>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></a>
-                      <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></a>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></Link>
+                      <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></Link>
                     </div>
                   </div>
                 </div>
@@ -120,15 +121,15 @@ export default function Home() {
             <div className="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
               <h6 className="card-title mb-0">Revenue</h6>
               <div className="dropdown">
-                <a type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link href="#" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                </a>
+                </Link>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></a>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></Link>
                 </div>
               </div>
             </div>
@@ -156,15 +157,15 @@ export default function Home() {
             <div className="d-flex justify-content-between align-items-baseline mb-2">
               <h6 className="card-title mb-0">Monthly sales</h6>
               <div className="dropdown mb-2">
-                <a type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link href="#" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                </a>
+                </Link>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></a>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></Link>
                 </div>
               </div>
             </div>
@@ -180,15 +181,15 @@ export default function Home() {
             <div className="d-flex justify-content-between align-items-baseline">
               <h6 className="card-title mb-0">Cloud storage</h6>
               <div className="dropdown mb-2">
-                <a type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link href="#" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                </a>
+                </Link>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></a>
-                  <a className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></a>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" className="icon-sm me-2"></i> <span className="">View</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" className="icon-sm me-2"></i> <span className="">Edit</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" className="icon-sm me-2"></i> <span className="">Delete</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" className="icon-sm me-2"></i> <span className="">Print</span></Link>
+                  <Link className="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" className="icon-sm me-2"></i> <span className="">Download</span></Link>
                 </div>
               </div>
             </div>

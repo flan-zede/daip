@@ -1,8 +1,8 @@
-import NavBar from './NavBar';
-import Footer from './Footer';
-import Sidebar from './Sidebar';
+import NavBar from './NavBar'
+import Footer from './Footer'
+import Sidebar from './Sidebar'
 
-export default function Layout(props: any) {
+export default function Base(props: any) {
   return (
     <div className="main-wrapper">
       <Sidebar />
@@ -14,5 +14,5 @@ export default function Layout(props: any) {
         <Footer />
       </div>
     </div>
-  );
+  )
 }

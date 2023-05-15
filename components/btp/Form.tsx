@@ -1,7 +1,7 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-  import * as Yup from 'yup';
-  import Error from '@/components/Error';
-  import { Btp } from '@prisma/client';
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+  import * as Yup from 'yup'
+  import Error from '@/components/Error'
+  import { Btp } from '@prisma/client'
   
   const validationSchema = Yup.object({
     nom: Yup.string().required("Champ requis"),
@@ -10,7 +10,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
   })
   
   export default function BtpForm(props: any) {
-    const  initialValues:Btp = props.data;
+    const  initialValues:Btp = props.data
     return (
       <Formik initialValues={initialValues} onSubmit={(v) => props.onAddBtp(v)} validationSchema={validationSchema}>
         <Form className="forms-sample">
@@ -34,5 +34,5 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
           </div>
         </Form>
       </Formik>
-    );
+    )
   }
