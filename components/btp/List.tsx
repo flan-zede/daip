@@ -11,15 +11,8 @@ export default function BtpList() {
   const [search, setSearch] = useState("")
   const [data, setData] = useState([])
   const [pending, setPending] = useState(true)
-	const [rows, setRows] = useState([])
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setRows(data)
-			setPending(false)
-		}, 2000)
-		return () => clearTimeout(timeout)
-	}, [])
-
+  const [rows, setRows] = useState([])
+  useEffect(() => { const timeout = setTimeout(() => { setRows(data), setPending(false) }, 2000); return () => clearTimeout(timeout) }, [])
   const getData = () => { axios.get<Btp[]>('http://localhost:3000/api/btps').then(function (res) { setData(res.data); setFilter(res.data) }) }
   useEffect(() => { getData() }, [])
   useEffect(() => {
@@ -27,7 +20,6 @@ export default function BtpList() {
     const res = data.filter(p => { return p.nom.toLowerCase().match(match) || p.prenoms.toLowerCase().match(match) })
     setFilter(res)
   }, [search])
-
   return (
     <DataTable data={filter} pagination defaultSortFieldId={1} dense highlightOnHover pointerOnHover subHeader progressPending={pending}
       columns={[
@@ -36,12 +28,8 @@ export default function BtpList() {
         { selector: row => row.prenoms, name: "Prénoms", sortable: true },
         { cell: (row) => (<button className='btn btn-xs btn-inverse-primary my-1' onClick={() => router.push('/btp/edit/' + row.id)}><Icon.Edit className="icon-xs" /></button>), name: "Action" }
       ]}
-      subHeaderComponent={
-        <div className='w-100 d-flex justify-content-between m-0 p-0'>
-          <button className='btn btn-inverse-primary btn-xs'><Icon.Download className="icon-xs" /> Exporter</button>
-          <input type="text" placeholder="Recherche" className='w-50 form-control' value={search} onChange={(e) => setSearch(e.target.value)} />
-        </div>
-      }
+      subHeaderComponent={<input type="text" placeholder="Recherche" className='form-control' value={search} onChange={(e) => setSearch(e.target.value)} />}
+      progressComponent={<span className="spinner-border spinner-border-sm"></span>}
     />
   )
 }

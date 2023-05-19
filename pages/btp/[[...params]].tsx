@@ -25,8 +25,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 export default function Find(props: any) {
   const router = useRouter()
   async function addHandler(btp: Btp) {
-    console.log(btp)
-    if (btp.id == null || btp.id == undefined) await axios.post('${baseUrl}', btp).then(function () { router.push('/btp') }).catch(function (e) { console.log(e) })
+    btp.datenaissance = new Date();
+    if (btp.id == null || btp.id == undefined) await axios.post(`${baseUrl}`, btp).then(function () { router.push('/btp') }).catch(function (e) { console.log(e) })
     else await axios.put(`${baseUrl}/${btp.id}`, btp).then(function () { router.push('/btp') }).catch(function (e) { console.log(e) })
   }
   return (

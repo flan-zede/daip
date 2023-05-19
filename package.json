@@ -29,6 +29,7 @@
     "react-data-table-component": "^7.5.3",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
+    "react-perfect-scrollbar": "^1.5.8",
     "typescript": "5.0.4",
     "yup": "^1.1.1"
   },
